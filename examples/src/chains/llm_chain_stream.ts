@@ -12,7 +12,7 @@ const chain = new LLMChain({ llm: model, prompt });
 // Call the chain with the inputs and a callback for the streamed tokens
 const res = await chain.call({ product: "colorful socks" }, [
   {
-    handleLLMNewToken(token: string) {
+    handleLLMNewToken(token) {
       process.stdout.write(token);
     },
   },
